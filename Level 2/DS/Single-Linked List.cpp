@@ -2,9 +2,9 @@
 
 using namespace std;
 
-class Node
+struct Node
 {
-public:
+
     int info;
     Node* next;
 
