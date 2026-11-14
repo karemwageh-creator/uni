@@ -45,6 +45,18 @@ int im_search(arr& t,int key){
         }
     return -1;
 }
+int binarySearch(const arr& t,int key){
+    int low=0,high=t.size;
+
+    while(low<=high){
+        int mid=low+(high-low)/2;
+        if(key==t.P[mid])return mid;
+
+        if(key>t.P[mid])high=mid-1;
+        else low=mid+1;
+    }
+    return -1;
+}
 
 int main(){
 arr a;
