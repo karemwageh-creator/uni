@@ -8,13 +8,13 @@ struct arr{
     int size;//-> the array size 
     int length;//-> how many elements are in the array 
 };
-void view(arr t)
+void view(const arr& t)
 {
    for(int i=0;i<t.length;i++){
     cout<<*(t.P+i)<<' ';
    }cout<<"\n";
 }
-void set(arr t){
+void set(const arr& t){
 
     for(int i=0;i<t.length;i++){
         cout<<"Enter the "<<i+1<<"th element :";
@@ -22,10 +22,28 @@ void set(arr t){
         cout<<"\n";
     }
 } 
-void ins(arr t){
+void ins(const arr& t){
     cout<<"Enter the index and the element you want :";int in,el;cin>>in>>el;
 
     
+}
+
+int search(const arr& t,int key){
+    for(int i=0;i<t.size;i++){
+        if(t.P[i]==key)return i+1;
+    }
+    return -1;
+}
+int im_search(arr& t,int key){
+
+        for(int i=0;i<t.size;i++){
+            if(t.P[i]==key)
+            {
+                if(i!=0)swap(t.P[i],t.P[i-1]);
+                return i+1;
+            }
+        }
+    return -1;
 }
 
 int main(){
