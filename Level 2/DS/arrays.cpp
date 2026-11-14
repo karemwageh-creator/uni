@@ -43,7 +43,13 @@ int search(const arr& t,int key){
     }
     return -1;
 }
-
+int max(const arr& t){
+    int m=t.P[0];
+    for(int i=1;i<t.size;i++){
+        if(t.P[i]>m)m=t.P[i];
+    }
+    return m;
+}
 
 
 
